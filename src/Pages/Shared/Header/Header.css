@@ -1,0 +1,25 @@
+.active-link {
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 24px;
+  transition: color ease-in-out 300ms;
+  color: #fc5185;
+  font-weight: 400;
+}
+.navbar-color a:hover {
+  color: #06113c;
+}
+
+.link {
+  color: #06113c;
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 24px;
+  transition: color ease-in-out 300ms;
+}
+.link:hover {
+  color: #fc5185;
+}
+.header-title {
+  color: #fc5185 !important;
+}
