@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../Images/banner-logo.png";
+import logo from "../../../Images/logo.png";
 import "./Header.css";
 
 const Header = () => {
@@ -16,15 +16,11 @@ const Header = () => {
         variant="light"
       >
         <Container>
-          <NavLink to="/">
+          <NavLink to="/" className="me-2">
             <img width={60} src={logo} alt="" />
           </NavLink>
-          <Navbar.Brand
-            as={Link}
-            to="/"
-            className="ms-2 title fw-bolder header-title"
-          >
-            INFINITY ELECTRONICS GADGETS
+          <Navbar.Brand as={Link} to="/" className="fw-bolder header-title">
+            INFINITY ELECTRONICS
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">

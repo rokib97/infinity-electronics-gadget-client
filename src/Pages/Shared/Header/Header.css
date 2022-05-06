@@ -3,7 +3,7 @@
   font-size: 24px;
   margin-left: 24px;
   transition: color ease-in-out 300ms;
-  color: #fc5185;
+  color: #007aff;
   font-weight: 400;
 }
 .navbar-color a:hover {
@@ -18,8 +18,8 @@
   transition: color ease-in-out 300ms;
 }
 .link:hover {
-  color: #fc5185;
+  color: #007aff;
 }
 .header-title {
-  color: #fc5185 !important;
+  color: #007aff !important;
 }
