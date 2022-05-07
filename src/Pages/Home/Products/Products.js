@@ -10,12 +10,14 @@ const Products = () => {
   }, []);
   return (
     <div className="container my-5">
-      <h2 className="fw-bold text-center">Our Latest Products</h2>
+      <h2 className="fw-bold text-center my-5">Our Latest Products</h2>
       <div className="row g-4">
         {products &&
-          products.map((product) => (
-            <Product key={product._id} product={product}></Product>
-          ))}
+          products
+            .slice(0, 6)
+            .map((product) => (
+              <Product key={product._id} product={product}></Product>
+            ))}
       </div>
     </div>
   );
