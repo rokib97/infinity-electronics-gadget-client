@@ -15,7 +15,7 @@ const ProductDetails = () => {
   console.log(product);
   return (
     <div className="container mt-5">
-      <div className="row">
+      <div className="row g-4">
         <div className="col-lg-6">
           <img src={img} alt="" />
         </div>
