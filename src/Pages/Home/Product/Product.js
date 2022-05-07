@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./Product.css";
 const Product = ({ product }) => {
   const navigate = useNavigate();
-  console.log(product);
-  const { _id, catagory, name, supplier, price, quantity, desc, img } = product;
+  const { _id, catagory, name, supplier, price, quantity, desc, img } =
+    product || {};
   const handleUseNavigate = (id) => {
     navigate(`/product/${id}`);
   };
