@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Form } from "react-bootstrap";
 import {
   useSendPasswordResetEmail,
@@ -7,7 +7,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
-import Spinner from "../../Shared/Spinner/Spinner";
+import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
@@ -32,13 +32,15 @@ const Login = () => {
     }
   }, [user, navigate, from]);
   if (loading || sending) {
-    return <Spinner />;
+    return <Loading></Loading>;
   }
 
+  // handle for submit for sign in
   const handleSumbit = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    console.log(email, password);
     signInWithEmailAndPassword(email, password);
   };
 
@@ -53,7 +55,11 @@ const Login = () => {
     }
   };
   return (
-    <div className="container login-container">
+    <div
+      data-aos="zoom-in-up"
+      data-aos-anchor-placement="top-bottom"
+      className="container login-container"
+    >
       <div className="row d-flex justify-content-center align-items-center">
         <div className="col-lg-4 col-md-8 col-12 mx-auto">
           <div className="w-100 form-details p-4">

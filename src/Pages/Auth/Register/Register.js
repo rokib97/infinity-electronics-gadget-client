@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Form } from "react-bootstrap";
 import {
   useCreateUserWithEmailAndPassword,
@@ -7,7 +7,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
-import Spinner from "../../Shared/Spinner/Spinner";
+import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
@@ -33,7 +33,7 @@ const Register = () => {
     }
   }, [user, navigate]);
   if (loading || updating) {
-    return <Spinner />;
+    return <Loading></Loading>;
   }
 
   // create user and update profile
@@ -115,7 +115,7 @@ const Register = () => {
                 Register
               </button>
             </Form>
-            <SocialLogin />
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

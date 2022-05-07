@@ -1,6 +1,7 @@
 import React from "react";
+import { Spinner } from "react-bootstrap";
 
-const Spinner = () => {
+const Loading = () => {
   return (
     <div
       style={{ height: "400px" }}
@@ -11,4 +12,4 @@ const Spinner = () => {
   );
 };
 
-export default Spinner;
+export default Loading;
