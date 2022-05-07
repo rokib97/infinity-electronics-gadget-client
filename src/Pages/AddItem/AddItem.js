@@ -22,7 +22,7 @@ const AddItem = () => {
       .then((res) => res.json())
       .then((result) => {
         toast.success("Product added succesfully!");
-        navigate("/");
+        navigate("/items");
         console.log(result);
       });
   };
@@ -40,12 +40,12 @@ const AddItem = () => {
                 required
                 className="mb-2 rounded-3 border-0 p-2"
                 placeholder="Category"
-                {...register("category")}
+                {...register("catagory")}
               />
               <input
                 required
                 className="mb-2  rounded-3 border-0 p-2"
-                placeholder="name"
+                placeholder="Name"
                 {...register("name")}
               />
               <input
@@ -58,13 +58,13 @@ const AddItem = () => {
               <input
                 required
                 className="mb-2  rounded-3 border-0 p-2"
-                placeholder="suplier"
-                {...register("suplier")}
+                placeholder="Supplier"
+                {...register("supplier")}
               />
               <input
                 required
                 className="mb-2  rounded-3 border-0 p-2"
-                placeholder="quantity"
+                placeholder="Quantity"
                 type="number"
                 {...register("quantity")}
               />
@@ -72,12 +72,12 @@ const AddItem = () => {
                 required
                 className="mb-2  rounded-3 border-0 p-2"
                 placeholder="Description"
-                {...register("description")}
+                {...register("desc")}
               />
               <input
                 required
                 className="mb-2 rounded-3 border-0 p-2"
-                placeholder="price"
+                placeholder="Price"
                 type="number"
                 {...register("price")}
               />

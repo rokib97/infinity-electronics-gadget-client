@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../../Shared/Loading/Loading";
 import Product from "../Product/Product";
 
 const Products = () => {
@@ -9,9 +10,12 @@ const Products = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+  if (products.length === 0) {
+    return <Loading />;
+  }
   return (
     <div className="container my-5">
-      <h2 className="fw-bold text-center my-5">Our Latest Products</h2>
+      <h2 className="fw-bold text-center my-5">Best Selling Products</h2>
       <div className="row g-4">
         {products &&
           products.map((product) => (

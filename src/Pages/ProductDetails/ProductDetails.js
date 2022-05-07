@@ -59,9 +59,9 @@ const ProductDetails = () => {
         <div className="col-lg-6 d-flex justify-content-center align-items-center">
           <img className="w-75" src={img} alt="" />
         </div>
-        <div className="col-lg-6 ">
+        <div className="col-lg-6">
           <h3>
-            <span className="text-primary">Category</span> :
+            <span className="text-primary">Category: </span>
             <small>{catagory}</small>
           </h3>
           <p>Id: {_id}</p>
@@ -84,7 +84,7 @@ const ProductDetails = () => {
             ref={valueRef}
             name="number"
             id=""
-            className="w-25 mx-auto me-2"
+            className="w-25 mx-auto me-2 rounded-3 border-0 p-1"
           />
 
           <button

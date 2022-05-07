@@ -6,7 +6,7 @@ const SingleItem = ({ item, handleDelete }) => {
 
   return (
     <div className="col-lg-4 col-md-6 col-12">
-      <div className="single-product py-4">
+      <div className="single-product py-4 h-100">
         <img className="w-100 mx-auto rounded-4 p-4" src={img} alt="" />
         <div className="text-start p-4">
           <h5>
@@ -15,9 +15,7 @@ const SingleItem = ({ item, handleDelete }) => {
           <p>Product Name: {name}</p>
           <p>
             Description:
-            <small>
-              {desc?.length > 50 ? desc.slice(0, 50) + "..." : desc}
-            </small>
+            <small> {desc}</small>
           </p>
           <p>Supplier: {supplier}</p>
           <p>Price: ${price}</p>
