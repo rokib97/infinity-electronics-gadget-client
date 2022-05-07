@@ -27,7 +27,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-      toast("Logged in Successfully!");
+      toast.success("Logged in Successfully!");
       navigate(from, { replace: true });
     }
   }, [user, navigate, from]);
@@ -49,7 +49,7 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      toast("Sent email,Please Reset Password");
+      toast.success("Sent email,Please Reset Password");
     } else {
       toast("Please Enter Email");
     }

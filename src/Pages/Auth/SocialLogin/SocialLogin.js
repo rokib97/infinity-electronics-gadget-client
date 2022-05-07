@@ -38,7 +38,7 @@ const SocialLogin = () => {
   }
   useEffect(() => {
     if (googleUser || githubUser) {
-      toast("Logged in Successfully!");
+      toast.success("Logged in Successfully!");
       navigate(from, { replace: true });
     }
   }, [googleUser, navigate, githubUser, from]);

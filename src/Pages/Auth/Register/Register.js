@@ -27,8 +27,8 @@ const Register = () => {
 
   useEffect(() => {
     if (user) {
-      toast("User Created Successfully!");
-      toast("Email Verification Sent!");
+      toast.success("User Created Successfully!");
+      toast.success("Email Verification Sent!");
       navigate("/");
     }
   }, [user, navigate]);

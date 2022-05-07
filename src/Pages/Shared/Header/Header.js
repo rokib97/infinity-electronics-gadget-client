@@ -21,7 +21,7 @@ const Header = () => {
       >
         <Container>
           <NavLink to="/" className="me-2">
-            <img width={60} src={logo} alt="" />
+            <img width={50} src={logo} alt="" />
           </NavLink>
           <Navbar.Brand as={Link} to="/" className="fw-bolder header-title">
             INFINITY ELECTRONICS

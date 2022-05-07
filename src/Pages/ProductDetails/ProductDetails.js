@@ -55,11 +55,11 @@ const ProductDetails = () => {
     <div className="container mt-5">
       <div className="row g-4">
         <div className="col-lg-6">
-          <img src={img} alt="" />
+          <img className="w-75 mx-auto" src={img} alt="" />
         </div>
-        <div className="col-lg-4 text-start">
+        <div className="col-lg-6">
           <h5>
-            <span className="text-primary">Category</span> :{" "}
+            <span className="text-primary">Category</span> :
             <small>{catagory}</small>
           </h5>
           <p>Id: {_id}</p>
@@ -71,15 +71,26 @@ const ProductDetails = () => {
           <button
             disabled={updatedQuantity <= 0 && true}
             onClick={handleDelivered}
-            className="btn btn-primary"
+            className="btn btn-primary mb-2"
           >
             Delivered
           </button>
           <br />
-          <input type="number" ref={valueRef} name="number" id="" />
-          <button onClick={handleReStock} className="btn btn-danger">
+          <input
+            type="number"
+            ref={valueRef}
+            name="number"
+            id=""
+            className="w-25 mx-auto me-2"
+          />
+
+          <button
+            onClick={handleReStock}
+            className="btn btn-danger my-2 me-2 rounded-pill"
+          >
             Restock
           </button>
+          <br />
           <Link to="/manageInventory">
             <button className="btn btn-primary">Manage Inventories</button>
           </Link>

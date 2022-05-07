@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-
 const ManageInventories = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -9,10 +8,11 @@ const ManageInventories = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div className="container mt-5">
-      <Table size="sm">
-        <thead>
-          <tr>
+    <div className="container mt-3">
+      <h2 className="text-center text-primary my-4">Manage Items</h2>
+      <Table responsive>
+        <thead className="mx-4">
+          <tr className="text-center">
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -22,24 +22,16 @@ const ManageInventories = () => {
         </thead>
         <tbody>
           {products.map((product) => (
-            <tr key={product._id}>
-              <td>{product?.name}</td>
-              <td>{product?.price}</td>
-              <td>{product?.quantity}</td>
-              <td>{product?.supplier}</td>
-              <button
-                className="btn"
-                style={{ backgroundColor: "red", color: "white" }}
-              >
-                Delete
-              </button>
-              <button
-                className="btn"
-                style={{ backgroundColor: "green", color: "white" }}
-              >
-                Update
-              </button>
-            </tr>
+            <>
+              <tr className="text-center" key={product._id}>
+                <td>{product?.name}</td>
+                <td>${product?.price}</td>
+                <td>{product?.quantity}</td>
+                <td>{product?.supplier}</td>
+                <button className="btn m-2">Delete</button>
+                <button className="btn">Update</button>
+              </tr>
+            </>
           ))}
         </tbody>
       </Table>
