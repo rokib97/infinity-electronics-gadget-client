@@ -13,11 +13,9 @@ const Products = () => {
       <h2 className="fw-bold text-center my-5">Our Latest Products</h2>
       <div className="row g-4">
         {products &&
-          products
-            .slice(0, 6)
-            .map((product) => (
-              <Product key={product._id} product={product}></Product>
-            ))}
+          products.map((product) => (
+            <Product key={product._id} product={product}></Product>
+          ))}
       </div>
     </div>
   );
