@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Product from "../Product/Product";
 
 const Products = () => {
@@ -16,6 +17,13 @@ const Products = () => {
           products.map((product) => (
             <Product key={product._id} product={product}></Product>
           ))}
+      </div>
+      <div className="text-center">
+        <Link to="/manageInventory">
+          <button className="btn btn-primary mt-4 text-center">
+            Manage Inventories
+          </button>
+        </Link>
       </div>
     </div>
   );

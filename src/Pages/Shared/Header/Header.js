@@ -21,7 +21,7 @@ const Header = () => {
       >
         <Container>
           <NavLink to="/" className="me-2">
-            <img width={50} src={logo} alt="" />
+            <img width={70} src={logo} alt="" />
           </NavLink>
           <Navbar.Brand as={Link} to="/" className="fw-bolder header-title">
             INFINITY ELECTRONICS
@@ -45,6 +45,26 @@ const Header = () => {
                   to={"/manageInventory"}
                 >
                   Manage Items
+                </NavLink>
+              )}
+              {user && (
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to={"/addItem"}
+                >
+                  Add Item
+                </NavLink>
+              )}
+              {user && (
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to={"/items"}
+                >
+                  My Items
                 </NavLink>
               )}
               <NavLink

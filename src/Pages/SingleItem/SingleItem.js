@@ -1,13 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./Product.css";
-const Product = ({ product }) => {
-  const navigate = useNavigate();
+
+const SingleItem = ({ item, handleDelete }) => {
   const { _id, catagory, name, supplier, price, quantity, desc, img } =
-    product || {};
-  const handleUseNavigate = (id) => {
-    navigate(`/product/${id}`);
-  };
+    item || {};
+
   return (
     <div className="col-lg-4 col-md-6 col-12">
       <div className="single-product py-4">
@@ -27,10 +23,10 @@ const Product = ({ product }) => {
           <p>Price: ${price}</p>
           <p>Quantity: {quantity}</p>
           <button
-            onClick={() => handleUseNavigate(_id)}
-            className="btn btn-primary rounded-pill"
+            onClick={() => handleDelete(_id)}
+            className="btn btn-danger rounded-pill"
           >
-            Update
+            Delete
           </button>
         </div>
       </div>
@@ -38,4 +34,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default SingleItem;

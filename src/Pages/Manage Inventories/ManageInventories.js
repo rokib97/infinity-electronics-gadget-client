@@ -49,31 +49,35 @@ const ManageInventories = () => {
             </thead>
             <tbody>
               {products.map((product) => (
-                <>
-                  <tr className="text-center p-0" key={product._id}>
-                    <td className="w-0 p-0">{product?.name}</td>
-                    <td>${product?.price}</td>
-                    <td className="w-0 p-0 m-0">{product?.quantity}</td>
+                <tr className="text-center p-0" key={product._id}>
+                  <td className="w-0 p-0">{product?.name}</td>
+                  <td>${product?.price}</td>
+                  <td className="w-0 p-0 m-0">{product?.quantity}</td>
+                  <button
+                    onClick={() => handleDelete(product._id)}
+                    className="btn m-2 text-white"
+                    style={{ backgroundColor: "red" }}
+                  >
+                    Delete
+                  </button>
+                  <Link to={`/product/${product._id}`}>
                     <button
-                      onClick={() => handleDelete(product._id)}
-                      className="btn m-2 text-white"
-                      style={{ backgroundColor: "red" }}
+                      className="btn text-white"
+                      style={{ backgroundColor: "blue" }}
                     >
-                      Delete
+                      Update
                     </button>
-                    <Link to={`/product/${product._id}`}>
-                      <button
-                        className="btn text-white"
-                        style={{ backgroundColor: "blue" }}
-                      >
-                        Update
-                      </button>
-                    </Link>
-                  </tr>
-                </>
+                  </Link>
+                </tr>
               ))}
             </tbody>
           </Table>
+
+          <div className="text-center">
+            <Link to="/addItem">
+              <button className="btn btn-primary">Add New Item</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

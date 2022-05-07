@@ -34,39 +34,41 @@ const ProductDetails = () => {
   };
   const handleReStock = () => {
     const value = parseInt(valueRef.current.value) + updatedQuantity;
-    console.log(value);
     const url = `http://localhost:5000/product/${productId}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        quantity: value,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setProduct(data);
-        toast.success("Restock SuccessFull!");
-      });
+    if (value) {
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          quantity: value,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setProduct(data);
+
+          toast.success("Restock Successfull!");
+        });
+    }
   };
   return (
     <div className="container mt-5">
       <div className="row g-4">
-        <div className="col-lg-6">
-          <img className="w-75 mx-auto" src={img} alt="" />
+        <div className="col-lg-6 d-flex justify-content-center align-items-center">
+          <img className="w-75" src={img} alt="" />
         </div>
-        <div className="col-lg-6">
-          <h5>
+        <div className="col-lg-6 ">
+          <h3>
             <span className="text-primary">Category</span> :
             <small>{catagory}</small>
-          </h5>
+          </h3>
           <p>Id: {_id}</p>
           <p>Product Name: {name}</p>
           <p>Description: {desc}</p>
           <p>Price: ${price}</p>
-          <p>Quantity: {quantity <= 0 ? "Stock Out" : quantity}</p>
+          <p>Quantity: {quantity <= 0 ? "Sold Out" : quantity}</p>
           <p>Supplier Name: {supplier}</p>
           <button
             disabled={updatedQuantity <= 0 && true}
@@ -77,6 +79,7 @@ const ProductDetails = () => {
           </button>
           <br />
           <input
+            required
             type="number"
             ref={valueRef}
             name="number"
