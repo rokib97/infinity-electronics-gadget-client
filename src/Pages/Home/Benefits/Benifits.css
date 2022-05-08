@@ -1,0 +1,27 @@
+.communication-details {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  background-color: rgb(225, 236, 239);
+  padding: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  height: 350px;
+  width: 400px;
+}
+.delivery-details {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  background-color: rgb(235, 221, 221);
+  padding: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  height: 350px;
+  width: 400px;
+}
+.discount-details {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  background-color: rgb(209, 236, 209);
+  padding: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  height: 350px;
+  width: 400px;
+}
