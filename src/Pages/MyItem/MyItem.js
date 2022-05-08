@@ -9,12 +9,16 @@ const MyItem = () => {
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch(
-      `https://afternoon-hamlet-05909.herokuapp.com/items?email=${user?.email}`
-    )
+    const url = `https://afternoon-hamlet-05909.herokuapp.com/items?email=${user?.email}`;
+    fetch(url, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [user.email, items]);
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useRef } from "react";
 import { Form } from "react-bootstrap";
 import {
@@ -28,7 +29,7 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       toast.success("Logged in Successfully!");
-      navigate(from, { replace: true });
+      // navigate(from, { replace: true });
     }
   }, [user, navigate, from]);
   if (loading || sending) {
@@ -36,12 +37,15 @@ const Login = () => {
   }
 
   // handle for submit for sign in
-  const handleSumbit = (event) => {
+  const handleSumbit = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     console.log(email, password);
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
 
   // rest password
