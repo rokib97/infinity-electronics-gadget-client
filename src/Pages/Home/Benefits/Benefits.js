@@ -5,7 +5,7 @@ import discount from "../../../Images/discount.png";
 import "./Benifits.css";
 const Benefits = () => {
   return (
-    <div className="container mt-5">
+    <div className="container">
       <h2 className="fw-bold text-center my-5">
         Why Choose Infinity Electronics?
       </h2>
@@ -21,7 +21,7 @@ const Benefits = () => {
             </p>
           </div>
         </div>
-        <div className="col-lg-4 col-md-6 col-12 ">
+        <div className="col-lg-4 col-md-6 col-12">
           <div className="text-center delivery-details">
             <img src={delivery} alt="" />
             <h3>Delivery</h3>
@@ -32,7 +32,7 @@ const Benefits = () => {
             </p>
           </div>
         </div>
-        <div className="col-lg-4 col-md-6 col-12 ">
+        <div className="col-lg-4 col-md-6 col-12">
           <div className="text-center discount-details">
             <img src={discount} alt="" />
             <h3>Discount</h3>

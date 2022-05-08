@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Swal from "sweetalert2";
 import auth from "../../firebase.init";
 import SingleItem from "../SingleItem/SingleItem";
+import "./MyItem.css";
 
 const MyItem = () => {
   const [user] = useAuthState(auth);
@@ -39,7 +40,7 @@ const MyItem = () => {
     });
   };
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 my-item">
       <h2 className="fw-bold text-primary text-center my-5">
         My Items Product
       </h2>

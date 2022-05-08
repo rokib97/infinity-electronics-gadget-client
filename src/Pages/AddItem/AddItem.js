@@ -8,7 +8,6 @@ import "./AddItem.css";
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {

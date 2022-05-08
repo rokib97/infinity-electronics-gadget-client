@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import Loading from "../Shared/Loading/Loading";
+import "./ManageInventory.css";
 const ManageInventories = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -35,8 +37,11 @@ const ManageInventories = () => {
       }
     });
   };
+  if (products.length === 0) {
+    return <Loading />;
+  }
   return (
-    <div className="container mt-3">
+    <div className="container mt-3 manage-inventory">
       <h2 className="text-center text-primary my-4">Manage Items</h2>
       <div className="row">
         <div className="col-lg-10 col-md-12 col-12 mx-auto">
@@ -51,25 +56,30 @@ const ManageInventories = () => {
             </thead>
             <tbody>
               {products.map((product) => (
-                <tr className="text-center p-0" key={product._id}>
-                  <td className="w-0 p-0">{product?.name}</td>
+                <tr className="text-center" key={product._id}>
+                  <td className="">{product?.name}</td>
                   <td>${product?.price}</td>
-                  <td className="w-0 p-0 m-0">{product?.quantity}</td>
-                  <button
-                    onClick={() => handleDelete(product._id)}
-                    className="btn m-2 text-white"
-                    style={{ backgroundColor: "red" }}
-                  >
-                    Delete
-                  </button>
-                  <Link to={`/product/${product._id}`}>
+                  <td className="">{product?.quantity}</td>
+                  <td>
                     <button
+                      onClick={() => handleDelete(product._id)}
                       className="btn text-white"
-                      style={{ backgroundColor: "blue" }}
+                      style={{ backgroundColor: "red" }}
                     >
-                      Update
+                      Delete
                     </button>
-                  </Link>
+                  </td>
+                  {/* update button optional  */}
+                  {/* <td>
+                    <Link to={`/product/${product._id}`}>
+                      <button
+                        className="btn text-white"
+                        style={{ backgroundColor: "blue" }}
+                      >
+                        Update
+                      </button>
+                    </Link>
+                  </td> */}
                 </tr>
               ))}
             </tbody>

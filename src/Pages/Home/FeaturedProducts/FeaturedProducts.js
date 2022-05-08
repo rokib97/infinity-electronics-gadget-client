@@ -4,8 +4,6 @@ import FeatureProduct from "../FeaturedProduct/FeatureProduct";
 
 const FeaturedProducts = () => {
   const [products, setProducts] = useState([]);
-  console.log(products);
-
   useEffect(() => {
     fetch("fakedb.json")
       .then((res) => res.json())

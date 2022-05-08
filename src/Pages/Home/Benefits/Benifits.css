@@ -4,8 +4,6 @@
   padding: 15px;
   border-radius: 25px;
   cursor: pointer;
-  height: 350px;
-  width: 400px;
 }
 .delivery-details {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
@@ -13,8 +11,6 @@
   padding: 15px;
   border-radius: 25px;
   cursor: pointer;
-  height: 350px;
-  width: 400px;
 }
 .discount-details {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
@@ -22,6 +18,4 @@
   padding: 15px;
   border-radius: 25px;
   cursor: pointer;
-  height: 350px;
-  width: 400px;
 }
