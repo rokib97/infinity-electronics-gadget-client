@@ -10,7 +10,7 @@ const Benefits = () => {
         Why Choose Infinity Electronics?
       </h2>
       <div className="row g-4">
-        <div className="col-lg-4 col-md-6 col-12 ">
+        <div className="col-lg-4 col-md-6 col-12">
           <div className="text-center communication-details">
             <img src={communication} alt="" />
             <h3>Communictions</h3>
