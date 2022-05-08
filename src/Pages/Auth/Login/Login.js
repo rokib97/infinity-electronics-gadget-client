@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useRef } from "react";
 import { Form } from "react-bootstrap";
 import {
@@ -8,6 +7,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
+import useToken from "../../../hooks/useToken";
 import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
@@ -25,13 +25,13 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   //send pass reset
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-
+  const [token] = useToken(user);
   useEffect(() => {
-    if (user) {
+    if (token) {
       toast.success("Logged in Successfully!");
-      // navigate(from, { replace: true });
+      navigate(from, { replace: true });
     }
-  }, [user, navigate, from]);
+  }, [token, navigate, from]);
   if (loading || sending) {
     return <Loading></Loading>;
   }
@@ -43,9 +43,9 @@ const Login = () => {
     const password = passwordRef.current.value;
     console.log(email, password);
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/login", { email });
-    localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
+    // const { data } = await axios.post("http://localhost:5000/login", { email });
+    // localStorage.setItem("accessToken", data.accessToken);
+    // navigate(from, { replace: true });
   };
 
   // rest password

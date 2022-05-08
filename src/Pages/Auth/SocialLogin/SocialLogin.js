@@ -6,6 +6,7 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
+import useToken from "../../../hooks/useToken";
 import facebook from "../../../Images/facebook.png";
 import github from "../../../Images/github.png";
 import google from "../../../Images/google.png";
@@ -24,6 +25,9 @@ const SocialLogin = () => {
   const [signInWithGithub, githubUser, , githubError] =
     useSignInWithGithub(auth);
 
+  // get token
+
+  const [token] = useToken(googleUser || githubUser);
   // handle error for google and github log in
   if (googleError || githubError) {
     errorElement = (
@@ -37,11 +41,11 @@ const SocialLogin = () => {
     );
   }
   useEffect(() => {
-    if (googleUser || githubUser) {
+    if (token) {
       toast.success("Logged in Successfully!");
       navigate(from, { replace: true });
     }
-  }, [googleUser, navigate, githubUser, from]);
+  }, [token, navigate, from]);
 
   // function to sign in google
   const handleGoogleSignIn = () => {

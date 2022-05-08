@@ -1,23 +1,34 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import auth from "../../firebase.init";
 import SingleItem from "../SingleItem/SingleItem";
 import "./MyItem.css";
 
 const MyItem = () => {
+  const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
   useEffect(() => {
     const url = `https://afternoon-hamlet-05909.herokuapp.com/items?email=${user?.email}`;
-    fetch(url, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, [user.email, items]);
+
+    try {
+      fetch(url, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => setItems(data));
+    } catch (error) {
+      if (error.response.status === 403 || error.response.status === 403) {
+        signOut(auth);
+        navigate("/login");
+      }
+    }
+  }, [user.email, items.at, navigate]);
 
   const handleDelete = (id) => {
     Swal.fire({

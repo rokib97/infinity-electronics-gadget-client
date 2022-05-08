@@ -7,6 +7,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
+import useToken from "../../../hooks/useToken";
 import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -19,6 +20,7 @@ const Register = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating] = useUpdateProfile(auth);
+  const [token] = useToken(user);
 
   const nameRef = useRef();
   const emailRef = useRef();
@@ -26,12 +28,12 @@ const Register = () => {
   const confirmPasswordRef = useRef();
 
   useEffect(() => {
-    if (user) {
+    if (token) {
       toast.success("User Created Successfully!");
       toast.success("Email Verification Sent!");
       navigate("/");
     }
-  }, [user, navigate]);
+  }, [token, navigate]);
   if (loading || updating) {
     return <Loading></Loading>;
   }
