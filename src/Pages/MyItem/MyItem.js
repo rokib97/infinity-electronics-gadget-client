@@ -8,7 +8,9 @@ const MyItem = () => {
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/items?email=${user?.email}`)
+    fetch(
+      `https://afternoon-hamlet-05909.herokuapp.com/items?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [user.email, items]);
@@ -23,7 +25,7 @@ const MyItem = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://afternoon-hamlet-05909.herokuapp.com/product/${id}`;
         fetch(url, {
           method: "DELETE",
         })

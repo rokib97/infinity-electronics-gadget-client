@@ -8,10 +8,11 @@ import "./AddItem.css";
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
+  console.log(user);
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://afternoon-hamlet-05909.herokuapp.com/products`;
     fetch(url, {
       method: "POST",
       headers: {

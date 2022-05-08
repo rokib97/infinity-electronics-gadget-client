@@ -1,74 +1,29 @@
 [
   {
+    "id": "6249faeb55a28a2b2a2acd4a",
     "catagory": "Laptop",
     "name": "Asus ZenBook 14",
-    "supplier": "Shorif Uddin",
     "price": "500",
     "quantity": "15",
-    "desc": " Asus ZenBook 14 UX425JA Core i5 10th Gen 512GB SSD 14 inch FHD Laptop with Windows 10",
+    "ratings": "5",
     "img": "https://i.ibb.co/nfDpC0B/xps-Gi3i-UJ1-Fwx-I-unsplash.png"
   },
   {
+    "id": "6249faeb42554e1879cfe489",
     "catagory": "Mobile",
     "name": "Apple iPhone 13 Pro",
-    "supplier": "Shanto Khan",
+    "ratings": "4",
     "price": "450",
     "quantity": "10",
-    "desc": "Apple iPhone 13 Pro ; CPU, Hexa-core (2x3.23 GHz Avalanche + 4x1.82 GHz Blizzard) ; GPU, Apple GPU (5-core graphics) ; Memory, Card slot ; Internal, 128GB 6GB RAM, ...",
     "img": "https://i.ibb.co/twRZ0zk/sahej-brar-Gc-Fn6g5n-J00-unsplash.png"
   },
   {
+    "id": "6249faeb7a91e636be5f948b",
     "catagory": "Tablet",
     "name": "Apple iPad Pro",
-    "supplier": "Zishan",
     "price": "250",
+    "ratings": "5",
     "quantity": "5",
-    "desc": "Apple iPad Pro 12.9 (2020) tablet. Announced Mar 2020. Features 12.9″ display, Apple A12Z Bionic chipset, 9720 mAh battery, 1024 GB storage, 6 GB RAM, ",
     "img": "https://i.ibb.co/BKsRc6H/rahul-chakraborty-2q-Krvxg-Ps-Q8-unsplash.png"
-  },
-  {
-    "catagory": "Computer",
-    "name": "iMac 24-inch - Apple",
-    "supplier": "Shakil Ahamed",
-    "price": "600",
-    "quantity": "12",
-    "desc": "The new iMac. 7 vibrant colors. Impossibly thin design. 24-inch 4.5K Retina display. The best camera, mics, and speakers in a Mac. Supercharged by M1.",
-    "img": "https://i.ibb.co/yPT7Jzp/marta-filipczyk-ZXNqu-SCc-BSc-unsplash.png"
-  },
-  {
-    "catagory": "Monitor",
-    "name": "SAMSUNG LF22T350",
-    "supplier": "Riazul Karim",
-    "price": "500",
-    "quantity": "8",
-    "desc": "SAMSUNG LF22T350 comes with 22 75Hz Full HD IPS LED Display. The SAMSUNG monitor featured with 3-sided borderless display brings a clean and modern aesthetic to any working environment.",
-    "img": "https://i.ibb.co/fGj04GN/kirill-martynov-x-Zo-NX2slte-U-unsplash.png"
-  },
-  {
-    "catagory": "Headphone",
-    "name": "Bose Headphones 700",
-    "supplier": "Rafiqul Islam",
-    "price": "150",
-    "quantity": "10",
-    "desc": "Bose Noise Cancelling Headphones 700, Bluetooth, Over-Ear Wireless Headphones with Built-In Microphone for Clear Calls & Alexa Voice Control, Black",
-    "img": "https://i.ibb.co/xLZ8sYx/dollar-gill-i-C5f0o-ZNTLw-unsplash.png"
-  },
-  {
-    "catagory": "Gaming Console",
-    "name": "HAC-001",
-    "supplier": "Sazid Hasan",
-    "price": "300",
-    "quantity": "25",
-    "desc": "Model number: HAC-001(-01) (product serial number begins with “XKW”) This model includes battery life of approximately 4.5 - 9 hours. The battery life will depend on the games you play. For instance, the battery will last approximately 5.5 hours for The Legend of Zelda: Breath of the Wild (games sold separately).",
-    "img": "https://i.ibb.co/b1tHHJH/erik-mclean-Ed-UYo2-Y435s-unsplash.png"
-  },
-  {
-    "catagory": "Home Speaker",
-    "name": "Bose Home Speaker 500",
-    "supplier": "Mehedi Hasan",
-    "price": "300",
-    "quantity": "5",
-    "desc": "Bose Home Speaker 500: Smart Bluetooth Speaker with Alexa Voice Control Built-in, White",
-    "img": "https://i.ibb.co/xgcjYxR/shakti-rajpurohit-8-Os8u1-TDXu0-unsplash.png"
   }
 ]

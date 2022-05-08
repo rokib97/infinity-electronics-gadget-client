@@ -6,7 +6,7 @@ import Product from "../Product/Product";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://afternoon-hamlet-05909.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -24,7 +24,7 @@ const Products = () => {
       </div>
       <div className="text-center">
         <Link to="/manageInventory">
-          <button className="btn btn-primary mt-4 text-center">
+          <button className="btn btn-primary mt-5 text-center">
             Manage Inventories
           </button>
         </Link>
