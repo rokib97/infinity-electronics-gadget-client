@@ -13,3 +13,18 @@ Live Link : [Infinity Electronics Gadget](https://infinity-electronics-gadget.we
 - Log in and Sign in Authentiction is presenet . where the user can sign in and sign up and access the proivate route Manage Items, Add Item and My Items.
 - In The Blogs Component Displaying the FAQ Answers.
 - Google And Github Sign in is present which is fully Functional.
+
+## A list of technologies (frameworks, libraries) used in My project
+
+- React
+- React Router
+- Firebase
+- React firebase hook
+- React Bootstrap
+- React-Toastify
+- React-hook-form
+- React-icons
+- Sweetalert2
+- Swiper Js
+- Mongodb
+- Npm etc
