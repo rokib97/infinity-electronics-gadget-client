@@ -4,7 +4,7 @@
 
 Live Link : [Infinity Electronics Gadget](https://infinity-electronics-gadget.web.app/).
 
-## Basic Project Structure Setup
+## Basic Project Structure, features and functionality
 
 - Single Page website about Warehouse Management. Containes some Pages. Home , Manage Items,Add a Item,My Items, Blog, Login , Sign up with different route.
 - In the Home Page, There are feature like Carousel, Best Selling Products,Featured Products, Header and navbar , using Best Selling Products section provides functionality like Update Product Quantity, Stock and Manage the Products Inventory which need Authentication.Also all the data is stored in the Mongodb database.
