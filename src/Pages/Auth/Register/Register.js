@@ -15,7 +15,7 @@ const Register = () => {
   const [passwordError, setPassswordError] = useState("");
 
   const navigate = useNavigate();
-  // create user with firebase book
+  // create user with firebase hook
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 

@@ -8,12 +8,16 @@ const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const { _id, catagory, name, supplier, price, quantity, desc, img } = product;
   const updatedQuantity = parseInt(quantity) || 0;
+
+
   useEffect(() => {
     const url = `https://afternoon-hamlet-05909.herokuapp.com/product/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [productId, product]);
+
+
   const handleDelivered = () => {
     const data = updatedQuantity - 1;
     const url = `https://afternoon-hamlet-05909.herokuapp.com/product/${productId}`;
@@ -32,6 +36,8 @@ const ProductDetails = () => {
         toast.success("Delivery Successfull!");
       });
   };
+
+  
   const handleReStock = () => {
     const value = parseInt(valueRef.current.value) + updatedQuantity;
     const url = `https://afternoon-hamlet-05909.herokuapp.com/product/${productId}`;
