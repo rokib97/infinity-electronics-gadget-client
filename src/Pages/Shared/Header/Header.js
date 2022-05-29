@@ -67,14 +67,6 @@ const Header = () => {
                   My Items
                 </NavLink>
               )}
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active-link" : "link"
-                }
-                to={"/blogs"}
-              >
-                Blogs
-              </NavLink>
               {user ? (
                 <NavLink
                   onClick={() => signOut(auth)}
