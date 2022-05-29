@@ -4,10 +4,6 @@
 
 Live Link : [Infinity Electronics Gadget](https://infinity-electronics-gadget.web.app/).
 
-Admin Access :
-Email: admin@access.com
-Password: 123456
-
 ## Basic Project Structure, features and functionality
 
 - Single Page website about Warehouse Management. Containes some Pages. Home , Manage Items,Add a Item,My Items, Blog, Login , Sign up with different route.
