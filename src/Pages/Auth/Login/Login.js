@@ -43,7 +43,7 @@ const Login = () => {
     const password = passwordRef.current.value;
     console.log(email, password);
     await signInWithEmailAndPassword(email, password);
-    // const { data } = await axios.post("https://afternoon-hamlet-05909.herokuapp.com/login", { email });
+    // const { data } = await axios.post("https://infinity-electronics-gadget-server.vercel.app/login", { email });
     // localStorage.setItem("accessToken", data.accessToken);
     // navigate(from, { replace: true });
   };

@@ -8,7 +8,7 @@ const ManageInventories = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch(
-      `https://afternoon-hamlet-05909.herokuapp.com/products?name=${"inventory"}`
+      `https://infinity-electronics-gadget-server.vercel.app/products?name=${"inventory"}`
     )
       .then((res) => res.json())
       .then((data) => setProducts(data));
@@ -24,7 +24,7 @@ const ManageInventories = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://afternoon-hamlet-05909.herokuapp.com/product/${id}`;
+        const url = `https://infinity-electronics-gadget-server.vercel.app/product/${id}`;
         fetch(url, {
           method: "DELETE",
         })

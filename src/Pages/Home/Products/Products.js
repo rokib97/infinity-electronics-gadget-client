@@ -6,7 +6,7 @@ import Product from "../Product/Product";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://afternoon-hamlet-05909.herokuapp.com/products")
+    fetch("https://infinity-electronics-gadget-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

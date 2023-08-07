@@ -12,7 +12,7 @@ const MyItem = () => {
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
   useEffect(() => {
-    const url = `https://afternoon-hamlet-05909.herokuapp.com/items?email=${user?.email}`;
+    const url = `https://infinity-electronics-gadget-server.vercel.app/items?email=${user?.email}`;
 
     try {
       fetch(url, {
@@ -41,7 +41,7 @@ const MyItem = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://afternoon-hamlet-05909.herokuapp.com/product/${id}`;
+        const url = `https://infinity-electronics-gadget-server.vercel.app/product/${id}`;
         fetch(url, {
           method: "DELETE",
         })

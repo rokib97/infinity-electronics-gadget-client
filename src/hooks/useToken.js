@@ -8,7 +8,7 @@ const useToken = (user) => {
       const email = user?.user?.email;
       if (email) {
         const { data } = await axios.post(
-          "https://afternoon-hamlet-05909.herokuapp.com/login",
+          "https://infinity-electronics-gadget-server.vercel.app/login",
           {
             email,
           }
