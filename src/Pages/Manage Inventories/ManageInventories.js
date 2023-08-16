@@ -8,7 +8,7 @@ const ManageInventories = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch(
-      `https://infinity-electronics-gadget-server.vercel.app/products?name=${"inventory"}`
+      `https://infinity-electronics-gadget-server.onrender.com/products?name=${"inventory"}`
     )
       .then((res) => res.json())
       .then((data) => setProducts(data));
@@ -24,7 +24,7 @@ const ManageInventories = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://infinity-electronics-gadget-server.vercel.app/product/${id}`;
+        const url = `https://infinity-electronics-gadget-server.onrender.com/product/${id}`;
         fetch(url, {
           method: "DELETE",
         })

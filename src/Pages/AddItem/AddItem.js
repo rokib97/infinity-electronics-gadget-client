@@ -11,7 +11,7 @@ const AddItem = () => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    const url = `https://infinity-electronics-gadget-server.vercel.app/products`;
+    const url = `https://infinity-electronics-gadget-server.onrender.com/products`;
     fetch(url, {
       method: "POST",
       headers: {

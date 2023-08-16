@@ -9,9 +9,8 @@ const ProductDetails = () => {
   const { _id, catagory, name, supplier, price, quantity, desc, img } = product;
   const updatedQuantity = parseInt(quantity) || 0;
 
-
   useEffect(() => {
-    const url = `https://infinity-electronics-gadget-server.vercel.app/product/${productId}`;
+    const url = `https://infinity-electronics-gadget-server.onrender.com/product/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -19,7 +18,7 @@ const ProductDetails = () => {
 
   const handleDelivered = () => {
     const data = updatedQuantity - 1;
-    const url = `https://infinity-electronics-gadget-server.vercel.app/product/${productId}`;
+    const url = `https://infinity-electronics-gadget-server.onrender.com/product/${productId}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -38,7 +37,7 @@ const ProductDetails = () => {
 
   const handleReStock = () => {
     const value = parseInt(valueRef.current.value) + updatedQuantity;
-    const url = `https://infinity-electronics-gadget-server.vercel.app/product/${productId}`;
+    const url = `https://infinity-electronics-gadget-server.onrender.com/product/${productId}`;
     if (value) {
       fetch(url, {
         method: "PUT",

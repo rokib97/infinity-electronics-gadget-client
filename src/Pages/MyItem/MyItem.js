@@ -12,7 +12,7 @@ const MyItem = () => {
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
   useEffect(() => {
-    const url = `https://infinity-electronics-gadget-server.vercel.app/items?email=${user?.email}`;
+    const url = `https://infinity-electronics-gadget-server.onrender.com/items?email=${user?.email}`;
 
     try {
       fetch(url, {
@@ -41,7 +41,7 @@ const MyItem = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://infinity-electronics-gadget-server.vercel.app/product/${id}`;
+        const url = `https://infinity-electronics-gadget-server.onrender.com/product/${id}`;
         fetch(url, {
           method: "DELETE",
         })

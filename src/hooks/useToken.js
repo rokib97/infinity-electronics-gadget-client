@@ -8,7 +8,7 @@ const useToken = (user) => {
       const email = user?.user?.email;
       if (email) {
         const { data } = await axios.post(
-          "https://infinity-electronics-gadget-server.vercel.app/login",
+          "https://infinity-electronics-gadget-server.onrender.com/login",
           {
             email,
           }
